@@ -1,0 +1,10 @@
+// Use .soql files to store SOQL queries.
+// You can execute queries in VS Code by selecting the
+//     query text and running the command:
+//     SFDX: Execute SOQL Query with Currently Selected Text
+
+// Alle Contact Records von dem Account sollen geupdated werden mit “Contact.HasOptedOutOfEmail” = TRUE
+SELECT Id, HasOptedOutOfEmail FROM Contact WHERE Account.Id = '0010900000Bw3FtAAJ'
+
+// Alle Opportunity Records von dem Account, die “Opportunity.IsClosed = FALSE” sind, sollen auf StageName = “Lost” gesetzt werden
+SELECT Id, StageName FROM Opportunity where Account.Id = '0010900000Bw3FtAAJ' AND IsClosed = false
